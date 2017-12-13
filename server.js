@@ -40,7 +40,7 @@ port = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
-
+app.use(express.static(path.join(__dirname,'client/build')));
 server.listen(port, () => {
   console.log(`Dont listen to my port ${port}`);
 });
